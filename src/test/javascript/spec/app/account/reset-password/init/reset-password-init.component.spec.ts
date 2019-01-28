@@ -2,7 +2,7 @@ import { createLocalVue, shallowMount, Wrapper } from '@vue/test-utils';
 import axios from 'axios';
 import * as config from '@/shared/config/config';
 import ResetPassword from '@/account/reset-password/reset-password.vue';
-import ResetPasswordClass from '@/account/reset-password/reset-password.component';
+import ResetPasswordClass from '@/account/reset-password/init/reset-password-init.component';
 import { EMAIL_NOT_FOUND_TYPE } from '@/constants';
 
 const localVue = createLocalVue();

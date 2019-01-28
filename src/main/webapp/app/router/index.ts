@@ -10,7 +10,8 @@ const Home = () => import('../core/home/home.vue');
 const Error = () => import('../core/error/error.vue');
 const Register = () => import('../account/register/register.vue');
 const Activate = () => import('../account/activate/activate.vue');
-const ResetPassword = () => import('../account/reset-password/reset-password.vue');
+const ResetPasswordInit = () => import('../account/reset-password/init/reset-password-init.vue');
+const ResetPasswordFinish = () => import('../account/reset-password/finish/reset-password-finish.vue');
 const ChangePassword = () => import('../account/change-password/change-password.vue');
 const Settings = () => import('../account/settings/settings.vue');
 const JhiUserManagementComponent = () => import('../admin/user-management/user-management.vue');
@@ -58,9 +59,14 @@ export default new Router({
       component: Activate
     },
     {
-      path: '/resetPassword',
-      name: 'ResetPassword',
-      component: ResetPassword
+      path: '/reset/request',
+      name: 'ResetPasswordInit',
+      component: ResetPasswordInit
+    },
+    {
+      path: '/reset/finish',
+      name: 'ResetPasswordFinish',
+      component: ResetPasswordFinish
     },
     {
       path: '/account/password',
