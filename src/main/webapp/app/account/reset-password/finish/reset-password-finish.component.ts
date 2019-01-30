@@ -1,5 +1,5 @@
-import { maxLength, minLength, required } from 'vuelidate/lib/validators';
 import axios from 'axios';
+import { maxLength, minLength, required } from 'vuelidate/lib/validators';
 import { Inject, Vue, Component } from 'vue-property-decorator';
 import LoginModalService from '@/account/login-modal.service';
 
@@ -29,14 +29,8 @@ export default class ResetPasswordFinish extends Vue {
   public success = null;
   public error = null;
   public keyMissing = null;
-
-  public confirmPassword: string;
-  // public doNotMatch: string;
-  // public error: string;
-  // public keyMissing: boolean;
-  // public success: string;
   public key: any;
-  resetAccount: any = {
+  public resetAccount: any = {
     newPassword: null,
     confirmPassword: null
   };
@@ -48,8 +42,10 @@ export default class ResetPasswordFinish extends Vue {
   }
 
   public finishReset(): void {
-    this.doNotMatch = '';
-    this.error = '';
+    this.doNotMatch = null;
+    this.success = null;
+    this.error = null;
+    this.keyMissing = null;
     if (this.resetAccount.newPassword !== this.resetAccount.confirmPassword) {
       this.doNotMatch = 'ERROR';
     } else {
@@ -59,13 +55,13 @@ export default class ResetPasswordFinish extends Vue {
           this.success = 'OK';
         })
         .catch(() => {
-          this.success = '';
+          this.success = null;
           this.error = 'ERROR';
         });
     }
   }
 
-  openLogin() {
+  public openLogin() {
     this.loginModalService().openLogin((<any>this).$root);
   }
 }

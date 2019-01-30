@@ -1,6 +1,6 @@
-import { createLocalVue, shallowMount, Wrapper } from '@vue/test-utils';
 import axios from 'axios';
 import * as config from '@/shared/config/config';
+import { createLocalVue, shallowMount, Wrapper } from '@vue/test-utils';
 import ResetPasswordFinish from '@/account/reset-password/finish/reset-password-finish.vue';
 import ResetPasswordFinishClass from '@/account/reset-password/finish/reset-password-finish.component';
 import LoginModalService from '@/account/login-modal.service';
@@ -36,7 +36,7 @@ describe('Reset Component Finish', () => {
     expect(wrapper.isVueInstance()).toBeTruthy();
   });
 
-  it('should reset request be a success', async () => {
+  it('should reset finish be a success', async () => {
     // Given
     mockedAxios.post.mockReturnValue(Promise.resolve());
 
