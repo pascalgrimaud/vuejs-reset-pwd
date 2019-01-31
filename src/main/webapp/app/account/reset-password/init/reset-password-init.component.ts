@@ -21,7 +21,7 @@ interface ResetAccount {
 @Component({
   validations
 })
-export default class ResetPassword extends Vue {
+export default class ResetPasswordInit extends Vue {
   public success: boolean = null;
   public error: string = null;
   public errorEmailNotExists: string = null;
@@ -38,6 +38,8 @@ export default class ResetPassword extends Vue {
       })
       .then(() => {
         this.success = true;
+        this.errorEmailNotExists = null;
+        this.error = null;
       })
       .catch(error => {
         this.success = null;
